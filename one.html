@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Capítulo 5 - Eventos</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('p').one("click" ,function () {
+				alert($(this).text());				
+			});					
+		});		
+	</script>
+</head>
+<body>	
+	<p>Primeiro parágrafo</p>
+	<p>Segundo parágrafo</p>
+	<p>Terceiro parágrafo</p>
+	<p>Quarto parágrafo</p>
+</body>
+</html>
