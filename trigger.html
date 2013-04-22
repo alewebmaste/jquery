@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Capítulo 5 - Eventos</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<style type="text/css">
+		span{color: red;}
+	</style>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button:first").click(function(){
+				atualizaClique($("span:first"));
+			});
+
+			$("button:last").click(function(){
+				$("button:first").trigger("click");
+				atualizaClique($("span:last"));
+			});
+
+			function atualizaClique (onde) {
+				var n = parseInt(onde.text(),0);
+				onde.text(n + 1);
+			}
+		});	
+	</script>
+</head>
+<body>	
+	<button type="button">Botão n1</button>	
+	<button type="button">Botão n2</button>
+	<p>Soma dos cliques nos botões 1 e 2 = <span>0</span></p>	
+	<p>Cliques somente no botão 2 = <span>0</span></p>	
+</body>
+</html>
