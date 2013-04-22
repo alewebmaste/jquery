@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Capítulo 5 - Eventos</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+
+	<style type="text/css">
+		div{cursor: pointer; width: 100px; height: 100px; border: 2px solid #000;}
+		span{display: block; vertical-align: top;}
+	</style>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('div').bind("mouseover" ,function () {
+				$(this).css("border-width","10px");
+				$("span:eq(0)").text("Ocorreu o evento muoseover. Aumentou a espessura da borda");
+			});
+
+			$('div').bind("click" ,function (o) {
+				var coordenadas = "x= " + o.pageX + "y= " + o.pageY;
+				$("span:eq(1)").text("Ocorreu o evento click nas coordenadas: " + coordenadas);
+			});
+
+			$('div').bind("dblclick" ,function () {
+				$(this).css("background","red");
+				$("span:eq(2)").text("Ocorreu o evento bdlclick. Mudou a cor de fundo");				
+			});			
+		});		
+	</script>
+</head>
+<body>	
+	<p>Eventos vinculados com bind()</p>
+	<ul>
+		<li> MouseOver aumenta a espessura da borda.</li>
+		<li>Click armazena e mostra as coordenadas do click.</li>
+		<li>DblClick troca a cor de fundo.</li>
+	</ul>
+	<div></div>
+	<span></span>
+	<span></span>
+	<span></span>
+</body>
+</html>
