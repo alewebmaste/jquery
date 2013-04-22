@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Capítulo 5 - Eventos</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+	<style type="text/css">
+		body{ margin: 0;}
+		div{width: 600px; height: 600px; background: #000;}
+	</style>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("div").click(function(event){
+				alert("Você clicou na posição x = " + event.pageX + "px, y = " + event.pageY + "px.");
+			});
+		});	
+	</script>
+</head>
+<body>	
+	<div></div>	
+</body>
+</html>
