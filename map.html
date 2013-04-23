@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Capítulo 7 - Funções utilitárias</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".versao").click(function(){  
+				var arr = ["e","g","h","j","v","a","j","m","c"];
+				$("div").append("<p>" + arr.join(" - ") + "<p/>")
+
+				arr = jQuery.map(arr,function(val,i){
+					return(val.toUpperCase() + i*3)
+				})
+				$("div").append("<p>" + arr.join(" - ") + "<p/>")
+
+				arr = jQuery.map(arr,function(val,i){
+					return(val + "*" + (i/5))
+				})
+				$("div").append("<p>" + arr.join(" - ") + "<p/>")
+			})
+						
+
+			$(".reset").click(function(){
+				$("#um").empty();
+			});
+		});			
+	</script>
+</head>
+<body>
+	<button type"button" class="versao">jQuery.map()</button>	
+	<button type"button" class="reset">reset</button>	
+	<div id="um"></div>	
+</body>
+</html>
