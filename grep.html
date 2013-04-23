@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Capítulo 7 - Funções utilitárias</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".versao").click(function(){
+				var arr = [4,3,1,9,6,8,0,2,7,3,4,8,7,1,9];
+				$("#um").append("<p>" + arr.join("- ") + "</p>")
+				
+				arr = jQuery.grep(arr, function (val,i) {
+					return(val != 3);
+				});
+				$("#um").append("<p>" + arr.join("- ") + "</p>")
+
+				arr = jQuery.grep(arr, function (val,i) {
+					return(i < 2 || i > 4);
+				});
+				$("#um").append("<p>" + arr.join("- ") + "</p>")
+
+				arr = jQuery.grep(arr, function (val,i) {
+					return(val <= 7 && i != 2);
+				});
+				$("#um").append("<p>" + arr.join("- ") + "</p>")
+			})
+						
+
+			$(".reset").click(function(){
+				$("#um").empty();
+			});
+		});			
+	</script>
+</head>
+<body>
+	<button type"button" class="versao">jQuery.grep()</button>	
+	<button type"button" class="reset">reset</button>	
+	<div id="um"></div>	
+</body>
+</html>
