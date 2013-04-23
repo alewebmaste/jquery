@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Capítulo 7 - Funções utilitárias</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".versao").click(function(){  
+				var arr = ["site","maujor","h",2,"jquery",105,"leitor","xpto"];
+				$("div").append("<p>" + arr.join(" - ") + "<p/>")
+
+				var res1 = jQuery.inArray("maujor",arr)
+				$("div").append("<p>Procura por <b>maujor</b> retornou índice <b> " + res1 + "</b></p>")
+
+				var res2 = jQuery.inArray(105,arr)
+				$("div").append("<p>Procura por <b>105</b> retornou índice <b> " + res2 + "</b></p>")
+				
+				var res3 = jQuery.inArray("LEITOR",arr)
+				$("div").append("<p>Procura por <b>LEITOR</b> retornou índice <b> " + res3 + "</b></p>")
+
+			})
+						
+
+			$(".reset").click(function(){
+				$("#um").empty();
+			});
+		});			
+	</script>
+</head>
+<body>
+	<button type"button" class="versao">jQuery.inArray()</button>	
+	<button type"button" class="reset">reset</button>	
+	<div id="um"></div>	
+</body>
+</html>
