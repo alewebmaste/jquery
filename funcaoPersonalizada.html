@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Capítulo 7 - Funções utilitárias</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+	<style type="text/css" media="all">
+	</style>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			(function($){
+				$.corTexto = function () {
+					var selecaoCor = document.getElementById('selecionaCor');
+					var indiceSelecaoCor = selecaoCor.selectedIndex;
+					selCor = selecaoCor.options[indiceSelecaoCor].value;
+
+					var selecaoElemento = document.getElementById('selecionaElemento');
+					var indiceSelecaoElemento = selecaoElemento.selectedIndex;
+					selElemento = selecaoElemento.options[indiceSelecaoElemento].value;
+
+
+					var el = document.getElementsByTagName(selElemento);
+					for (var i = 0; i < el.length; i++) {
+						el[i].style.color = selCor;
+					}
+				}
+			})(jQuery);
+
+			$("button").click(function(){
+				$.corTexto()
+			})
+
+						
+		});
+	</script>
+</head>
+<body>
+
+	<form action="" method="">
+		<label>Escolha uma cor <br />
+			<select id="selecionaCor">
+				<option value="#999999">Default</option>		
+				<option value="#FF0000">Vermelho</option>		
+				<option value="#0000FF">Azul</option>		
+				<option value="#00cc00">Verde</option>				
+			</select>
+		</label> <br /><br />
+
+		<label>Escolha o elemento <br />
+			<select id="selecionaElemento">
+				<option value="p">Parágrafo</option>		
+				<option value="h2">Cabeçalhos</option>		
+				<option value="li">Listas</option>		
+				<option value="*">Tudo</option>				
+			</select>
+		</label>
+
+	</form>
+
+	<button type="button">Aplicar</button>
+
+	<br />	
+
+	<h2>Cabeçalho nível 2</h2>
+	
+	<p>Parágrafo 1</p>
+	<p>Parágrafo 2</p>
+	<p>Parágrafo 3</p>
+	
+	<h2>Cabeçalho nível 2</h2>
+	
+	<ul>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ul>
+	
+	<h2>Cabeçalho nível 2</h2>
+</body>
+</html>
