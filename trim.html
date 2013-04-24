@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Capítulo 7 - Funções utilitárias</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").click(function(){
+				var minhaString = "    Foi lançado o livro Jquery do Maujor.     ";
+				alert('String antes do trim:\n\n"'  + minhaString + '"');
+
+				minhaString = jQuery.trim(minhaString);
+				alert('String depois do trim:\n\n"'  + minhaString + '"');
+			});				
+		});			
+	</script>
+</head>
+<body>
+	<button type"button">jQuery.trim()</button>	
+</body>
+</html>
